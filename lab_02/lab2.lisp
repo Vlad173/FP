@@ -1,0 +1,5 @@
+(defun product-sum2 (lst)
+    (cond ((equal (list-length lst) 1) (* (first lst) 2))
+        ((equal (list-length lst) 2) (expt (+ (first lst) (second lst)) 2))
+        (t (* (product-sum2 (cdr (butlast lst))) 
+            (expt (+ (first lst) (nth (- (list-length lst) 1) lst)) 2)))))
